@@ -1,23 +1,26 @@
 <template>
   <div id="app">
     <div class="container">
-      <pageheader></pageheader>
+      <pageheader title="Upload een foto om te kijken waar deze genomen is." subtitle="(Als deze GPS data bevat)"></pageheader>
       <uploadedimage></uploadedimage>
-      <imagemeta></imagemeta>
+      <fileinput></fileinput>
+      <leafletmap ></leafletmap>
     </div>
   </div>
 </template>
 
 <script>
 import Pageheader from './components/Pageheader.vue'
-import Imagemeta from './components/Imagemeta.vue'
+import Fileinput from './components/Fileinput.vue'
+import Leafletmap from './components/Leafletmap.vue'
 import Uploadedimage from './components/Uploadedimage.vue'
 
 export default {
   name: 'app',
   components: {
     Pageheader,
-    Imagemeta,
+    Fileinput,
+    Leafletmap,
     Uploadedimage
   }
 }
@@ -43,6 +46,12 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transition: height 0.5s;
+
+    @media only screen and (max-width: 767px) {
+      width: 100%;  
+      margin: 0;
+    }
+    
   }
 }
 </style>

@@ -1,11 +1,21 @@
 <template lang="html">
   <div class="img-wrapper">
-    <img id="img-uploaded" src="" alt="">
+    <img ref="image" id="img-uploaded" :src="image" alt="">
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      image: ""
+    }
+  },
+  created() {
+    this.$eventBus.$on('send-data', (data) => {
+      this.image = data
+    });
+  }
 }
 </script>
 
